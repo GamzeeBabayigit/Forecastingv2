@@ -1,0 +1,7 @@
+django>=3.0,<4.0
+pandas
+scikit-learn
+numpy
+prophet
+statsmodels
+plotly
