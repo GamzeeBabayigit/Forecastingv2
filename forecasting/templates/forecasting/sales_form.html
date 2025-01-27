@@ -1,0 +1,28 @@
+{% extends 'forecasting/base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Add Sales Data</h2>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="{{ form.material.id_for_label }}" class="form-label">Material</label>
+                {{ form.material }}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.date.id_for_label }}" class="form-label">Date</label>
+                {{ form.date }}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.quantity.id_for_label }}" class="form-label">Quantity</label>
+                {{ form.quantity }}
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'forecasting:sales_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %} 

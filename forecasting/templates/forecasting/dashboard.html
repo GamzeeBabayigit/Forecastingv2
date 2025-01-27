@@ -1,0 +1,53 @@
+{% extends 'forecasting/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>Sales Data Management</h3>
+            </div>
+            <div class="card-body">
+                <p>Manage your sales data records for forecasting analysis.</p>
+                <a href="{% url 'forecasting:sales_list' %}" class="btn btn-primary">View Sales Data</a>
+                <a href="{% url 'forecasting:sales_add' %}" class="btn btn-success">Add New Sale</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>Sales Forecasting</h3>
+            </div>
+            <div class="card-body">
+                <p>Generate sales forecasts using multiple models and compare their performance.</p>
+                <a href="{% url 'forecasting:forecast' %}" class="btn btn-primary">View Forecasts</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>About the Forecasting Models</h3>
+            </div>
+            <div class="card-body">
+                <h4>Linear Regression</h4>
+                <p>A simple but effective model that assumes a linear relationship between time and sales quantity.</p>
+                
+                <h4>Random Forest</h4>
+                <p>An ensemble learning method that combines multiple decision trees to create a more robust and accurate prediction model.</p>
+                
+                <h4>Model Evaluation Metrics</h4>
+                <ul>
+                    <li><strong>Mean Absolute Error (MAE):</strong> Average absolute difference between predicted and actual values.</li>
+                    <li><strong>Root Mean Square Error (RMSE):</strong> Square root of the average squared differences between predicted and actual values.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
